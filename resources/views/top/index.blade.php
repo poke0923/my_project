@@ -10,7 +10,13 @@
 
     <body>
         TopController!!
-        {{ $sampleValue }}
+        <!--{{ $sampleValue }}-->
+
+        <header>
+            <a href="/login" class="">
+                ログイン
+            </a>
+        </header>
     </body>
 
 </html>
