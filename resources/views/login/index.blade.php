@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ app()->getLocale() }}">
 
 <head>
@@ -13,38 +13,38 @@
 
 <body class="login">
     <main id="login">
-    <h2>ログイン</h2>
-    <form method="post" action="/login">
-        @csrf
-        <div>
-            ID:<input type="text" v-model="id" name="id">
-        </div>
-        <div>
-            PW:<input type="password" v-model="password" name="password">
-        </div>
-        <div>
-            <button type="button" v-on:click="loginSubmit" >送信</button>
-        </div>
+        <?php if ($variables["isLoginActive"]) { ?>
+            <h2 class="title">ログイン状態</h2>
+            <a href="/login/unregister">ログアウト</a>
+        <?php } else { ?>
+            <h2 class="title">新規登録</h2>
+            <form ref="registerForm" method="post" action="/login/register">
+                @csrf
+                <div>
+                    ID : <input type="text" v-model="id" name="id">
+                </div>
+                <div>
+                    PW : <input type="password" v-model="password" name="password">
+                </div>
+                <div>
+                    <button type="button" v-on:click="registerSubmit">送信</button>
+                </div>
+            </form>
 
-    </form>
-    @if( $variables["isLoginActive"] )
-        <a href="/login/unregister">ログアウト</a>  
-    @else
-        <h2>新規登録</h2>
-        <form method="post" action="/login/register">
-            @csrf
-            <div>
-                ID:<input type="text" v-model="id" name="id">
-            </div>
-            <div>
-                PW:<input type="password" v-model="password" name="password">
-            </div>
-            <div>
-                <button type="button" v-on:click="registerSubmit" >送信</button>
-            </div>
-
-        </form>
-    @endif
+            <h2 class="title">ログイン</h2>
+            <form ref="loginForm" method="post" action="/login/sign_in">
+                @csrf
+                <div>
+                    ID : <input type="text" v-model="id" name="id">
+                </div>
+                <div>
+                    PW : <input type="password" v-model="password" name="password">
+                </div>
+                <div>
+                    <button type="button" v-on:click="loginSubmit">送信</button>
+                </div>
+            </form>
+        <?php } ?>
     </main>
     <script src="/js/build/login/index.js"></script>
 </body>
