@@ -10,7 +10,7 @@ const application = {
 
         let  registerSubmit = function(){
             if(id.value == ""){
-                alert("idを入力してください");
+                alert("idを入力してください。");
                 return;
             }
             if(password.value == ""){
@@ -23,7 +23,7 @@ const application = {
 
         let loginSubmit = function () {
             if (id.value == "") {
-                alert("id を入力してください。");
+                alert("id を入力してください!");
                 return;
             }
             if (password.value == "") {
