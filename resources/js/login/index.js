@@ -1,9 +1,9 @@
-import * as Vue from "vue";
-import { ref } from "vue";
+import * as Vue from "vue"; // Vue.jsのすべての機能をVueという名前でimportしている。この先すべてVueという名前でアクセスできる。
+import { ref } from "vue"; // Vueの機能のrefを使うためのコード。今後これで初期値を設定することでデータの変更を検知して関連するビューを更新してくれる
 
 const application = {
     setup() {
-        const registerForm = ref(); //refの中の値を初期値として設定。リアクティブな値として処理していくことができる（＝更新していくことができる？）
+        const registerForm = ref(); //refを使って初期値を設定。リアクティブな値として処理ができる（＝イベントがあれば関連するビューにも反映）
         const loginForm = ref();
         const id = ref("");
         const password = ref("");

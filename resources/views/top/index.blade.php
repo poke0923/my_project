@@ -9,14 +9,18 @@
     </head>
 
     <body>
-        TopController!!
-        <!--{{ $sampleValue }}-->
+       <header>
+        <a href="/login">
+            <h2>タイトル</h2>
+        </a>
+       </header>
 
-        <header>
-            <a href="/login" class="">
-                ログイン
-            </a>
-        </header>
+       <main>
+        <h2 v-html="title"></h2> <!-- v-htmlでデータバインディングしている。イコールの後は表示内容に合わせて、Vue側で設定した名前と同じにする -->
+        <button v-on:click="buttonClick">変更</button>
+       </main>
+
+       <script src="/js/build/top/index.js"></script>
     </body>
 
 </html>
