@@ -38,16 +38,24 @@
             <button type="button" v-on:click="validate">ひらがな確認</button>
         </form>
 
+        <sample-component></sample-component> <!-- componetを利用 -->
+        <!-- 
         <section class="tab-layout">
             <div class="tabs">
-                <button class="tab" v-on:click="page=1">tab1</button> <!-- buttonを押した際にpageの値を変更するイベントを設定 -->
+                <button class="tab" v-on:click="page=1">tab1</button> 
                 <button class="tab" v-on:click="page=2">tab2</button>
                 <button class="tab" v-on:click="page=3">tab3</button>
             </div>
             <div class="content" v-bind:class="{ show : page == 1 }"> 
                 <p>page1</p>
             </div>
-            <!-- pageの値によりclass名が変化（class="content show"）し、cssでshowがついていないタグは表示されない、ついているタグは表示されるように設定している。 -->
+             -->
+            <!-- 
+                v-bindを用いてpageの値によりclass名が変化（class="content show"）するようにしている。
+                v-bindは動的にhtmlのタグを制御するときに使われる。
+                cssでshowがついていないタグは表示されない、ついているタグは表示されるように設定している。 
+            -->
+            <!-- 
             <div class="content" v-bind:class="{ show : page == 2 }">
                 <p>page2</p>
             </div>
@@ -55,6 +63,7 @@
                 <p>page3</p>
             </div>            
         </section>
+         -->
 
        </main>
 

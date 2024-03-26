@@ -1,5 +1,6 @@
 import * as Vue from "vue";
 import { ref } from "vue";
+import SampleComponent from "./SampleComponent.vue";
 
 const application = {
     setup() { // インスタンス化（表示したとき？）に自動実行されるメソッド
@@ -16,7 +17,6 @@ const application = {
             validateResult.value = isKana ? "正常":"ひらがなで入力してください";
             };
 
-        const page = ref(1);
         return { 
             title,
             buttonClick,
@@ -25,10 +25,12 @@ const application = {
             validate,
             validateResult,
 
-            page,
-
         }; //setupメソッドは何かしらのデータやメソッドを返す必要がある。返す必要がない時は{}で空のオブジェクトを返す。
     },
+
+    components : {
+        "sample-component" : SampleComponent,
+    }
 };
 
 try { //tyrメソッドはエラーが発生する可能性があるコードに用いる
