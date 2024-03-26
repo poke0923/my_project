@@ -7,9 +7,26 @@ const application = {
         let buttonClick = function(){ //機能を追加するときはfunctionでせっていしていく。
             title.value = "value update"; //ある要素の値にアクセスするときは要素名.valueなどの表記。階層の下に行くイメージでドットを使う
         };
+
+        const validateResult = ref("");
+        const name = ref(""); // html側のinputタグに用いる値。
+
+        let validate = function() {
+            let isKana = name.value.match(/^[ぁ-んー　]*$/);
+            validateResult.value = isKana ? "正常":"ひらがなで入力してください";
+            };
+
+        const page = ref(1);
         return { 
             title,
             buttonClick,
+            
+            name,
+            validate,
+            validateResult,
+
+            page,
+
         }; //setupメソッドは何かしらのデータやメソッドを返す必要がある。返す必要がない時は{}で空のオブジェクトを返す。
     },
 };
