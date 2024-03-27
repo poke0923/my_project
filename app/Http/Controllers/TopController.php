@@ -6,7 +6,9 @@ use Illuminate\Support\Facades\DB;
 
 class TopController extends Controller {
     public function index( Request $request ){
-        $sampleValue = "sampleテキストです。";
+        
+
+        $phpValue = "ひとよひとよにひとみごろ";
 
         //$records = DB::connection('mysql')->select("select * from items");
         //$name = $records[0]->name;
@@ -18,6 +20,6 @@ class TopController extends Controller {
         //$deleteResult = DB::connection('mysql')->delete("delete from items where name = 'りんご'");
         //dd($deleteResult);
 
-        return view( 'top/index', ['sampleValue' => $sampleValue]) ;
+        return view( 'top/index', ['phpValue' => $phpValue]) ;
     }
 }
