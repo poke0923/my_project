@@ -38,7 +38,11 @@
             <button type="button" v-on:click="validate">ひらがな確認</button>
         </form>
 
-        <sample-component></sample-component> <!-- componetを利用 -->
+         <!-- componetを利用 -->
+        <sample-component tab-name1="A" tab-name2="B" tab-name3="C" tab-body1="tabBody1-A" tab-body2="tabBody2-B" tab-body3="tabBody3-C"></sample-component>
+        <sample-component tab-name1="D" tab-name2="E" tab-name3="F" tab-body1="tabBody1-D" tab-body2="tabBody2-E" tab-body3="tabBody3-F"></sample-component>
+        <!-- sample-componentを利用し、props（プロパティ）として各要素の値を指定している -->
+
         <!-- 
         <section class="tab-layout">
             <div class="tabs">
